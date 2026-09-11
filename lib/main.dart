@@ -66,8 +66,8 @@ class _SoloRouteScreenState extends State<SoloRouteScreen> {
     });
 
     try {
-      // REPLACE with your actual WordPress site URL
-      var uri = Uri.parse('https://yourwebsite.com/wp-admin/admin-ajax.php?action=shopigo_ind_rider_upload_snap');
+      // Connected with your active ngrok local tunnel
+      var uri = Uri.parse('https://abroad-creation-verdict.ngrok-free.dev/wp-admin/admin-ajax.php?action=shopigo_ind_rider_upload_snap');
       var request = http.MultipartRequest('POST', uri);
 
       request.fields['rider_name'] = _nameController.text;
@@ -92,7 +92,7 @@ class _SoloRouteScreenState extends State<SoloRouteScreen> {
           _showError('Server Error: Upload failed.');
         }
       } else {
-        _showError('Connection Error. Check your internet.');
+        _showError('Connection Error. Check your internet or ngrok status.');
       }
     } catch (e) {
       _showError('Error: $e');
