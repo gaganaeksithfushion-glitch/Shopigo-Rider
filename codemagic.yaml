@@ -7,9 +7,9 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
-      - name: Generate missing platform files
+      - name: Initialize Android and Platform files
         script: |
-          flutter create . --platforms=android
+          flutter create . --platforms=android,ios
       - name: Get flutter packages
         script: |
           flutter pub get
